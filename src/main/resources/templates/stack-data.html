@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
+    <link rel="stylesheet" href="../static/css/footer.css" th:href="@{css/footer.css}">
+    <title>Stack Demo</title>
+</head>
+<body>
+<header>
+    <h1>Stack Demo</h1>
+</header>
+<main>
+    <form method="post" th:action="@{/process}">
+        <p>
+            <label for="p">Value</label>
+            <input id="p" th:name="pushed" th:value="${popped}" style="width: 5em;">
+        </p>
+        <p>
+            <input type="hidden" th:name="todo" th:value="Push">
+            <button type="submit">Push&nbsp;&darr;</button>&nbsp;
+        </p>
+    </form>
+    <h3>Stack Content</h3>
+    <div th:unless="${items.isEmpty()}">
+        <form method="post" th:action="@{process}">
+            <p>
+                <input type="hidden" th:name="todo" th:value="Pop">
+                <button type="submit">Pop&nbsp;&uarr;</button>
+            </p>
+        </form>
+        <table>
+            <tr>
+                <th>Order</th>
+                <th>Value</th>
+            </tr>
+            <tr th:each="item: ${items}">
+                <td th:text="${item.order}">1</td>
+                <td th:text="${item.value}">Item-1</td>
+            </tr>
+        </table>
+    </div>
+    <p th:if="${items.isEmpty()}" class="message">
+        The Stack Is Empty
+    </p>
+</main>
+<footer>
+    Sheridan College&nbsp;&nbsp;<span class='hart'>&#9825;</span>&nbsp;&nbsp;2023
+</footer>
+</body>
+</html>
