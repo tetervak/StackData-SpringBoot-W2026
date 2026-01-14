@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css">
+    <link rel="stylesheet" th:href="@{/css/footer.css}" href="../static/css/footer.css">
+    <title>Error 404</title>
+</head>
+<body>
+<header th:replace="~{stack-data :: stack-header}">Some Header</header>
+<main>
+    <h2>Error 404</h2>
+    <p class="error-message">
+        The page is not found.
+    </p>
+
+    <ul>
+        <li>Method:
+            <!--/*@thymesVar id="method" type="String"*/-->
+            <span th:text="${method}" class="value">Method</span>
+        </li>
+        <li>Path:
+            <!--/*@thymesVar id="path" type="String"*/-->
+            <span th:text="${path}" class="value">Path</span>
+        </li>
+    </ul>
+    <p>
+        <a th:href="@{/stack}">Stack Content</a>
+    </p>
+</main>
+<footer th:replace="~{stack-data :: stack-footer}">Some Footer</footer>
+</body>
+</html>

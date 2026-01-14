@@ -51,6 +51,12 @@ a:hover{
     font-weight: bolder;
 }
 
+.error-message{
+    color: red;
+    font-style: oblique;
+    font-weight: bolder;
+}
+
 table {
     margin-left: 2em;
     margin-bottom: 2em;
