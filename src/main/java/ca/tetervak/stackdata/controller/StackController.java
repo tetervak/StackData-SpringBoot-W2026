@@ -45,7 +45,7 @@ public class StackController {
         return stack;
     }
 
-    @PostMapping("/process")
+    @GetMapping("/process")
     public String processInput(
             @RequestParam String todo,
             @RequestParam(defaultValue = "") String pushed,

@@ -11,7 +11,7 @@
     <h1>Stack Data</h1>
 </header>
 <main>
-    <form method="post" th:action="@{/process}">
+    <form method="get" th:action="@{/process}">
         <p>
             <label for="p">Value</label>
             <input id="p" th:name="pushed" th:value="${popped}">
@@ -23,7 +23,7 @@
     </form>
     <h3>Stack Content</h3>
     <div th:unless="${items.isEmpty()}">
-        <form method="post" th:action="@{process}">
+        <form method="get" th:action="@{process}">
             <p>
                 <input type="hidden" th:name="todo" th:value="Pop">
                 <button type="submit">Pop&nbsp;&uarr;</button>
