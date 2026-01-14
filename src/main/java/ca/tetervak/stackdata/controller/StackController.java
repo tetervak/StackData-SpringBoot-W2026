@@ -49,7 +49,8 @@ public class StackController {
     public String processInput(
             @RequestParam String todo,
             @RequestParam(defaultValue = "") String pushed,
-            HttpSession session
+            HttpSession session,
+            Model model
     ) {
         log.trace("processInput() is called");
         log.debug("todo = {}", todo);
@@ -63,9 +64,10 @@ public class StackController {
             if (!stack.isEmpty()) {
                 String popped = stack.pop();
                 log.debug("the value [{}] is popped", popped);
-                return "redirect:stack?popped=" + popped;
+                model.addAttribute("popped", popped);
             }
         }
-        return "redirect:stack";
+        model.addAttribute("items", stack.getItems());
+        return "stack-data";
     }
 }
