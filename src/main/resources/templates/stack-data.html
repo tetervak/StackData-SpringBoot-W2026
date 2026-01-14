@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
     <link rel="stylesheet" href="../static/css/footer.css" th:href="@{css/footer.css}">
-    <title>Stack Demo</title>
+    <title>Stack Data</title>
 </head>
 <body>
 <header>
-    <h1>Stack Demo</h1>
+    <h1>Stack Data</h1>
 </header>
 <main>
     <form method="post" th:action="@{/process}">
         <p>
             <label for="p">Value</label>
-            <input id="p" th:name="pushed" th:value="${popped}" style="width: 5em;">
+            <input id="p" th:name="pushed" th:value="${popped}">
         </p>
         <p>
             <input type="hidden" th:name="todo" th:value="Push">
@@ -45,7 +45,7 @@
     </p>
 </main>
 <footer>
-    Sheridan College&nbsp;&nbsp;<span class='hart'>&#9825;</span>&nbsp;&nbsp;2023
+    Sheridan College&nbsp;&nbsp;<span class='hart'>&#9825;</span>&nbsp;&nbsp;2026
 </footer>
 </body>
 </html>

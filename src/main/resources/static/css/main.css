@@ -26,15 +26,9 @@ label {
     color: dodgerblue;
 }
 
-input[type="text"]{
-    width: 3em;
-    vertical-align: baseline;
-    border-radius: 6px;
-    border-style: solid;
-    border-width: thin;
-    border-color: gray;
-    padding-left: 5px;
-    font-size: 100% ;
+input#p{
+    width: 5em;
+    margin-left: 0.5em;
 }
 
 input[type="submit"]{
