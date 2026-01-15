@@ -15,6 +15,7 @@ public class StackController {
 
     @GetMapping("/")
     public String redirectToStack() {
+        log.trace("redirectToStack() is called");
         return "redirect:stack";
     }
 
