@@ -1,5 +1,8 @@
 package ca.tetervak.stackdata.domain;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -15,6 +18,7 @@ public class StackData implements Serializable {
         list.push("Item-3");
     }
 
+    @Nullable
     public String pop() {
         // the same as "public synchronized String pop()"
         synchronized (this) {
@@ -26,10 +30,11 @@ public class StackData implements Serializable {
         }
     }
 
-    public synchronized void push(String value) {
+    public synchronized void push(@NonNull String value) {
         list.push(value);
     }
 
+    @NonNull
     public synchronized List<StackItem> getItems() {
         int count = list.size();
         List<StackItem> items = new ArrayList<>(count);
